@@ -26,6 +26,13 @@ using namespace std;
 @property (nonatomic,strong) CvVideoCamera* videoCamera;
 
 
+@property (weak, nonatomic) IBOutlet UISlider *SliderH_low;
+@property (weak, nonatomic) IBOutlet UISlider *SliderH_high;
+@property (weak, nonatomic) IBOutlet UISlider *SliderS_low;
+@property (weak, nonatomic) IBOutlet UISlider *SliderS_high;
+@property (weak, nonatomic) IBOutlet UISlider *SliderV_low;
+@property (weak, nonatomic) IBOutlet UISlider *SliderV_high;
+
 @end
 
 //Blue
@@ -55,10 +62,19 @@ vector<vector<cv::Point>> fakeContours;
     // Do any additional setup after loading the view.
     
     //self.videoCameraView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    [_SliderH_low addTarget:self action:@selector(sliderValueChanged_HL:) forControlEvents:UIControlEventValueChanged];
+    [_SliderH_high addTarget:self action:@selector(sliderValueChanged_HH:) forControlEvents:UIControlEventValueChanged];
+    [_SliderS_low addTarget:self action:@selector(sliderValueChanged_SL:) forControlEvents:UIControlEventValueChanged];
+    [_SliderS_high addTarget:self action:@selector(sliderValueChanged_SH:) forControlEvents:UIControlEventValueChanged];
+    [_SliderV_low addTarget:self action:@selector(sliderValueChanged_VL:) forControlEvents:UIControlEventValueChanged];
+    [_SliderV_high addTarget:self action:@selector(sliderValueChanged_VH:) forControlEvents:UIControlEventValueChanged];
+
+    
+    
 
     self.videoCamera = [[CvVideoCamera alloc]initWithParentView:self.videoCameraView];
     self.videoCamera.delegate = self;
-    self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionFront;
+    self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionBack;
     self.videoCamera.defaultAVCaptureSessionPreset =AVCaptureSessionPresetHigh;
     self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
     self.videoCamera.defaultFPS = 30;
@@ -85,6 +101,7 @@ vector<vector<cv::Point>> fakeContours;
     
     inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
     
+    
     //开操作 (去除一些噪点)
     Mat element = getStructuringElement(MORPH_RECT, cv::Size(5, 5));
     morphologyEx(imgThresholded, imgThresholded, MORPH_OPEN, element);
@@ -92,23 +109,7 @@ vector<vector<cv::Point>> fakeContours;
     //闭操作 (连接一些连通域)
     morphologyEx(imgThresholded, imgThresholded, MORPH_CLOSE, element);
     
-    //cvFindContours(imgThresholded, mem_storage, &first_contour);
-    /*这一段需要转换Mat cvMat IPImage
-     IplImage imgTmp = imgThresholded;
-     IplImage *temp = cvCloneImage(&imgTmp);
-     if (!imgThresholded.empty()) {
-     cvFindContours(temp, mem_storage, &first_contour);
-     CvRect rect;
-     if (first_contour != NULL) {
-     first_contour = GetAreaMaxContour(first_contour);
-     rect = cvBoundingRect(GetAreaMaxContour(first_contour),0);
-     //cvRectangle(temp, cvPoint(rect.x, rect.y), cvPoint(rect.x + rect.width, rect.y + rect.height),CV_RGB(255,255, 255), 1, 8, 0);
-     Mat ROI = imgThresholded(rect);
-     imshow("ROI_WIN",ROI);
-     }
-     
-     }
-     */
+
     if (!imgThresholded.empty()) {
         findContours(imgThresholded, contours, hierarchy, RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
         
@@ -116,20 +117,22 @@ vector<vector<cv::Point>> fakeContours;
         fakeContours = MatGetAreaMaxContour(contours);
         
         if (!contours.empty() && !fakeContours.empty()) {
-            cout<<"识别到的数量:"<<fakeContours.size()<<endl;
+          //  cout<<"识别到的数量:"<<fakeContours.size()<<endl;
             
             for (int i = 0; i < fakeContours.size(); i++) {
                 rect = boundingRect(MatGetAreaMaxContour(contours)[i]);
                 Mat ROI = imgThresholded(rect);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    self.testView.image = MatToUIImage(ROI);
-                    
-                });
             }
         }
         
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        self.testView.image = MatToUIImage(imgThresholded);
+        
+    });
+    
     contours.clear();
     
     
@@ -154,6 +157,38 @@ vector<vector<cv::Point>> MatGetAreaMaxContour(vector<vector<cv::Point>> contour
     }
     
     return area_max_contour;
+}
+
+-(void)sliderValueChanged_HL:(UISlider *)slider
+{
+    iLowH =slider.value;
+    NSLog(@"slider value%f",slider.value);
+}
+-(void)sliderValueChanged_HH:(UISlider *)slider
+{
+    iHighH =slider.value;
+
+    NSLog(@"slider value%f",slider.value);
+}
+-(void)sliderValueChanged_SL:(UISlider *)slider
+{
+    iLowS = slider.value;
+    NSLog(@"slider value%f",slider.value);
+}
+-(void)sliderValueChanged_SH:(UISlider *)slider
+{
+    iHighS = slider.value;
+    NSLog(@"slider value%f",slider.value);
+}
+-(void)sliderValueChanged_VL:(UISlider *)slider
+{
+    iLowV = slider.value;
+    NSLog(@"slider value%f",slider.value);
+}
+-(void)sliderValueChanged_VH:(UISlider *)slider
+{
+    iHighV = slider.value;
+    NSLog(@"slider value%f",slider.value);
 }
 
 @end
