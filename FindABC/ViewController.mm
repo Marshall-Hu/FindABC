@@ -12,7 +12,6 @@
 #import <opencv2/imgcodecs/ios.h>
 
 
-
 using namespace cv;
 using namespace std;
 
@@ -81,6 +80,9 @@ vector<vector<cv::Point>> fakeContours;
     
     //[self.view addSubview:self.videoCameraView];
     [self.videoCamera start];
+    
+  //  UIImage *test = [UIImage imageNamed:@"test.jpg"];
+    
     
 }
 
