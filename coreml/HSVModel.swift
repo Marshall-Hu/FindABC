@@ -10,17 +10,16 @@ import Foundation
 import UIKit
 import CoreML
 
-class HSV{
-    public static let inputWidth = 448
-    public static let inputHeight = 448
+class HSVModel: NSObject{
+    public static let inputWidth = 30
+    public static let inputHeight = 30
     
     let model_hsv = number_200()
     
-    public init() { }
-    
-    public func MyHSVModel(image:UIImage)
+    @objc public func MyHSVModel(image:UIImage)
     {
-        let result = try? predict_v1(image: image.pixelBuffer(width: HSV.inputWidth, height: HSV.inputHeight)!)
+        print("MyHSVModel开始执行")
+        let result = try? predict_v1(image: image.pixelBuffer(width: HSVModel.inputWidth, height: HSVModel.inputHeight)!)
         
         if result != nil  {
             print(result!)

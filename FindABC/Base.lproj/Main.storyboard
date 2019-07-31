@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindABC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,13 +77,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="SliderH_high" destination="E0i-98-e6h" id="tNQ-sl-CT2"/>
-                        <outlet property="SliderH_low" destination="Yg3-IM-o3k" id="k7g-qg-33E"/>
-                        <outlet property="SliderS_high" destination="k5A-yx-R60" id="0ZZ-mL-sOn"/>
-                        <outlet property="SliderS_low" destination="HmD-R8-79H" id="2ha-M7-usF"/>
-                        <outlet property="SliderV_high" destination="PU4-OJ-eMR" id="jIh-uW-Tiw"/>
-                        <outlet property="SliderV_low" destination="TbA-s7-vWm" id="GWK-FX-a8Q"/>
-                        <outlet property="testView" destination="f7g-Lc-YZF" id="8GT-8v-qlj"/>
+                        <outlet property="SliderH_high" destination="E0i-98-e6h" id="IQD-qx-Ohs"/>
+                        <outlet property="SliderH_low" destination="Yg3-IM-o3k" id="1Wj-ZW-JG6"/>
+                        <outlet property="SliderS_high" destination="k5A-yx-R60" id="8XZ-7P-Sh5"/>
+                        <outlet property="SliderS_low" destination="HmD-R8-79H" id="hyz-zX-dFc"/>
+                        <outlet property="SliderV_high" destination="PU4-OJ-eMR" id="ge3-qZ-1HL"/>
+                        <outlet property="SliderV_low" destination="TbA-s7-vWm" id="i4e-H8-V5J"/>
+                        <outlet property="testView" destination="f7g-Lc-YZF" id="p0z-b6-VHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
