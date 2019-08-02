@@ -14,7 +14,7 @@ class HSVModel: NSObject{
     public static let inputWidth = 30
     public static let inputHeight = 30
     
-    let model_hsv = number_200()
+    let model_hsv = number_50()
     
     @objc public func MyHSVModel(image:UIImage)
     {
@@ -22,7 +22,18 @@ class HSVModel: NSObject{
         let result = try? predict_v1(image: image.pixelBuffer(width: HSVModel.inputWidth, height: HSVModel.inputHeight)!)
         
         if result != nil  {
-            print(result!)
+            
+           // print(result!.max()!)
+            var max = result![0],index = 0
+            for i in 0..<result!.count{
+                if result![i] > max{
+                    max = result![i]
+                    index = i
+                }
+            }
+            print(index)
+            
+            
         }
         else
         {

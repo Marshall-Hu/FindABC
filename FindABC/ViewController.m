@@ -37,7 +37,7 @@
     [_SliderV_low addTarget:self action:@selector(sliderValueChanged_VL:) forControlEvents:UIControlEventValueChanged];
     [_SliderV_high addTarget:self action:@selector(sliderValueChanged_VH:) forControlEvents:UIControlEventValueChanged];
     
-    UIImage *test = [UIImage imageNamed:@"test.jpg"];
+    UIImage *test = [UIImage imageNamed:@"test_9 (2).jpg"];
     NSLog(@"asdasdasdasd");
     HSVModel* tempModel =[ [HSVModel alloc] init];
     [tempModel MyHSVModelWithImage:test];
