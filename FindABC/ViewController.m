@@ -7,11 +7,15 @@
 //
 #import "ViewController.h"
 #import <FindABC-Swift.h>
+#import "../opencv/OpenCVHSV.h"
 
-@interface ViewController ()
-
+@interface ViewController () <MyCreatHSVImageDelegate>
+{
+    OpenCVHSV *tempCV;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *testView;
 @property (strong, nonatomic) UIImageView *videoCameraView;
+@property (weak, nonatomic) IBOutlet UIImageView *rectImage1;
 
 
 @property (weak, nonatomic) IBOutlet UISlider *SliderH_low;
@@ -20,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *SliderS_high;
 @property (weak, nonatomic) IBOutlet UISlider *SliderV_low;
 @property (weak, nonatomic) IBOutlet UISlider *SliderV_high;
+
+
 
 @end
 
@@ -42,39 +48,64 @@
     HSVModel* tempModel =[ [HSVModel alloc] init];
     [tempModel MyHSVModelWithImage:test];
     NSLog(@"asdasdasdasd");
+    
+    tempCV = [OpenCVHSV new];
+    tempCV.delegate = self;
+    [tempCV isThisWorking];
+    [tempCV initHSV];
 
 }
 
 -(void)sliderValueChanged_HL:(UISlider *)slider
 {
-    // iLowH =slider.value;
+    [tempCV SetiLowH:slider.value];
     NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_HH:(UISlider *)slider
 {
     // iHighH =slider.value;
-    
+    [tempCV SetiHighH:slider.value];
     NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_SL:(UISlider *)slider
 {
     // iLowS = slider.value;
+    [tempCV SetiLowS:slider.value];
     NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_SH:(UISlider *)slider
 {
     // iHighS = slider.value;
+    [tempCV SetiHighS:slider.value];
     NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_VL:(UISlider *)slider
 {
     // iLowV = slider.value;
+    [tempCV SetiLowV:slider.value];
     NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_VH:(UISlider *)slider
 {
     // iHighV = slider.value;
+    [tempCV SetiHighV:slider.value];
     NSLog(@"slider value%f",slider.value);
+}
+
+- (void)imageDidProcessed:(UIImage*)image{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self->_testView.image = image;
+    });
+    
+}
+
+-(void)rectImageDidProcessed:(NSArray *)rectImageArray{
+    if (rectImageArray.count == 1) {
+        UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self->_rectImage1.image = rectImage;
+        });
+    }
 }
 
 @end

@@ -61,15 +61,22 @@
                                     <constraint firstItem="TbA-s7-vWm" firstAttribute="width" secondItem="WbG-lQ-nSL" secondAttribute="width" id="zNq-Ww-ees"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e3I-91-0pP">
+                                <rect key="frame" x="75" y="722" width="264" height="140"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.65253103599999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WbG-lQ-nSL" firstAttribute="width" secondItem="f7g-Lc-YZF" secondAttribute="width" id="3wO-Yw-a0A"/>
+                            <constraint firstItem="e3I-91-0pP" firstAttribute="width" secondItem="WbG-lQ-nSL" secondAttribute="width" id="65x-NL-kBu"/>
                             <constraint firstItem="SX7-hO-YtF" firstAttribute="width" secondItem="WbG-lQ-nSL" secondAttribute="width" id="DK9-aC-but"/>
+                            <constraint firstItem="e3I-91-0pP" firstAttribute="top" secondItem="SX7-hO-YtF" secondAttribute="bottom" id="PuG-zp-zRd"/>
                             <constraint firstItem="SX7-hO-YtF" firstAttribute="bottom" secondItem="WbG-lQ-nSL" secondAttribute="bottom" id="TSW-Av-kiE"/>
                             <constraint firstItem="SX7-hO-YtF" firstAttribute="leading" secondItem="WbG-lQ-nSL" secondAttribute="leading" id="Tql-LD-izt"/>
                             <constraint firstItem="f7g-Lc-YZF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uni-oX-7Tz"/>
                             <constraint firstItem="SX7-hO-YtF" firstAttribute="top" secondItem="WbG-lQ-nSL" secondAttribute="top" id="V7J-q8-Y7s"/>
+                            <constraint firstItem="e3I-91-0pP" firstAttribute="leading" secondItem="WbG-lQ-nSL" secondAttribute="leading" id="beU-AX-Oux"/>
+                            <constraint firstItem="e3I-91-0pP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dA0-Dp-p43"/>
                             <constraint firstItem="WbG-lQ-nSL" firstAttribute="top" secondItem="f7g-Lc-YZF" secondAttribute="bottom" id="glk-i0-tWg"/>
                             <constraint firstItem="WbG-lQ-nSL" firstAttribute="leading" secondItem="f7g-Lc-YZF" secondAttribute="leading" id="mT4-jw-N06"/>
                             <constraint firstItem="f7g-Lc-YZF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rYG-EH-o0X"/>
@@ -83,6 +90,7 @@
                         <outlet property="SliderS_low" destination="HmD-R8-79H" id="hyz-zX-dFc"/>
                         <outlet property="SliderV_high" destination="PU4-OJ-eMR" id="ge3-qZ-1HL"/>
                         <outlet property="SliderV_low" destination="TbA-s7-vWm" id="i4e-H8-V5J"/>
+                        <outlet property="rectImage1" destination="e3I-91-0pP" id="EdQ-DJ-C1d"/>
                         <outlet property="testView" destination="f7g-Lc-YZF" id="p0z-b6-VHZ"/>
                     </connections>
                 </viewController>

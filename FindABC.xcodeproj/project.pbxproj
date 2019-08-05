@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00326FA522F6DE4500245BD1 /* number_100_newdata.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */; };
 		007EB72F22E3402000AE8F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007EB72E22E3402000AE8F5E /* AppDelegate.m */; };
 		007EB73522E3402000AE8F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007EB73322E3402000AE8F5E /* Main.storyboard */; };
 		007EB73722E3402200AE8F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007EB73622E3402200AE8F5E /* Assets.xcassets */; };
@@ -18,8 +19,6 @@
 		007EB74C22E362ED00AE8F5E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007EB74B22E362ED00AE8F5E /* CoreVideo.framework */; };
 		0091E38622F1CFEB00768A5E /* HSVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091E38522F1CFEB00768A5E /* HSVModel.swift */; };
 		0091E38822F1D8A400768A5E /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0091E38722F1D8A400768A5E /* test.jpg */; };
-		00CA01C722F2CCE4005B2882 /* HSV.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00CA01C622F2CCE4005B2882 /* HSV.mlmodel */; };
-		00CA01C922F45D02005B2882 /* number_50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00CA01C822F45D02005B2882 /* number_50.mlmodel */; };
 		00D4578822F1C41500CD4373 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */; };
 		00D4578A22F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */; };
 		00D4578E22F1CA2100CD4373 /* OpenCVHSV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578D22F1CA2100CD4373 /* OpenCVHSV.mm */; };
@@ -37,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = number_100_newdata.mlmodel; sourceTree = "<group>"; };
 		007EB72A22E3402000AE8F5E /* FindABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007EB72D22E3402000AE8F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007EB72E22E3402000AE8F5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +52,6 @@
 		007EB74B22E362ED00AE8F5E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		0091E38522F1CFEB00768A5E /* HSVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSVModel.swift; sourceTree = "<group>"; };
 		0091E38722F1D8A400768A5E /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
-		00CA01C622F2CCE4005B2882 /* HSV.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV.mlmodel; sourceTree = "<group>"; };
-		00CA01C822F45D02005B2882 /* number_50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = number_50.mlmodel; sourceTree = "<group>"; };
 		00D4578622F1C41400CD4373 /* FindABC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindABC-Bridging-Header.h"; sourceTree = "<group>"; };
 		00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
@@ -90,8 +88,7 @@
 		006E5B8722EDE78B005A16CC /* coreml */ = {
 			isa = PBXGroup;
 			children = (
-				00CA01C622F2CCE4005B2882 /* HSV.mlmodel */,
-				00CA01C822F45D02005B2882 /* number_50.mlmodel */,
+				00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */,
 				00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */,
 				00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */,
 				00D4578622F1C41400CD4373 /* FindABC-Bridging-Header.h */,
@@ -251,12 +248,11 @@
 				00F01B2122F1E65D002C4780 /* ViewController.m in Sources */,
 				00D4578822F1C41500CD4373 /* UIImage+CVPixelBuffer.swift in Sources */,
 				0091E38622F1CFEB00768A5E /* HSVModel.swift in Sources */,
-				00CA01C922F45D02005B2882 /* number_50.mlmodel in Sources */,
+				00326FA522F6DE4500245BD1 /* number_100_newdata.mlmodel in Sources */,
 				00D4578A22F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift in Sources */,
 				007EB73D22E3402200AE8F5E /* main.m in Sources */,
 				007EB72F22E3402000AE8F5E /* AppDelegate.m in Sources */,
 				00D4578E22F1CA2100CD4373 /* OpenCVHSV.mm in Sources */,
-				00CA01C722F2CCE4005B2882 /* HSV.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

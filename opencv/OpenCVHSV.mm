@@ -22,19 +22,6 @@ using namespace std;
 
 @end
 
-//Blue
-int iLowH = 100;
-int iHighH = 140;
-
-//    int iLowH = 160;
-//    int iHighH = 179;
-
-int iLowS = 90;
-int iHighS = 255;
-
-int iLowV = 1;
-int iHighV = 255;
-
 //定义变量
 vector<vector<cv::Point>> contours;
 vector<Vec4i> hierarchy;
@@ -50,24 +37,34 @@ vector<vector<cv::Point>> fakeContours;
 
 -(void) initHSV
 {
+    //Blue
+     iLowH = 100;
+     iHighH = 140;
     
-   // self.videoCamera = [[CvVideoCamera alloc]initWithParentView:self.videoCameraView];
+    //    int iLowH = 160;
+    //    int iHighH = 179;
+    
+     iLowS = 90;
+     iHighS = 255;
+    
+     iLowV = 1;
+     iHighV = 255;
+    self.videoCamera = [[CvVideoCamera alloc] init];
     self.videoCamera.delegate = self;
     self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionBack;
     self.videoCamera.defaultAVCaptureSessionPreset =AVCaptureSessionPresetHigh;
     self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    self.videoCamera.defaultFPS = 30;
+    self.videoCamera.defaultFPS = 5;
     
     //[self.view addSubview:self.videoCameraView];
      [self.videoCamera start];
-    
+    NSLog(@"w初始化相机侦测");
 }
 
 - (void)processImage:(cv::Mat &)image
 {
     // 将图像转换为灰度显示
     //cvtColor(image, image, COLOR_RGBA2RGB);
-    
     Mat imgHSV;
     vector<Mat> hsvSplit;
     cvtColor(image, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
@@ -94,6 +91,7 @@ vector<vector<cv::Point>> fakeContours;
         
         CvRect rect;
         fakeContours = MatGetAreaMaxContour(contours);
+        NSMutableArray* RectImageArray = [[NSMutableArray alloc] init];
         
         if (!contours.empty() && !fakeContours.empty()) {
             //  cout<<"识别到的数量:"<<fakeContours.size()<<endl;
@@ -101,7 +99,12 @@ vector<vector<cv::Point>> fakeContours;
             for (int i = 0; i < fakeContours.size(); i++) {
                 rect = boundingRect(MatGetAreaMaxContour(contours)[i]);
                 Mat ROI = imgThresholded(rect);
+                NSLog(@"得到的rectImage的尺寸是:%d,%d",ROI.cols,ROI.rows);
+                [RectImageArray addObject:MatToUIImage(ROI)];
             }
+        }
+        if ([_delegate respondsToSelector:@selector(rectImageDidProcessed:)]) {
+            [_delegate rectImageDidProcessed:RectImageArray];
         }
         
     }
@@ -111,7 +114,10 @@ vector<vector<cv::Point>> fakeContours;
 //        self.testView.image = MatToUIImage(imgThresholded);
 //
 //    });
-    
+//    _resultImage = MatToUIImage(imgThresholded);
+    if ([_delegate respondsToSelector:@selector(imageDidProcessed:)]) {
+        [_delegate imageDidProcessed:MatToUIImage(imgThresholded)];
+    }
     contours.clear();
 
 }
@@ -135,7 +141,7 @@ vector<vector<cv::Point>> MatGetAreaMaxContour(vector<vector<cv::Point>> contour
     return area_max_contour;
 }
 
-- (UIImage*)HSFprocessImage:(UIImage*) imageUIImage
+- (void)HSFprocessImage:(UIImage*) imageUIImage
 {
     // 将图像转换为灰度显示
     //cvtColor(image, image, COLOR_RGBA2RGB);
@@ -187,9 +193,30 @@ vector<vector<cv::Point>> MatGetAreaMaxContour(vector<vector<cv::Point>> contour
     //    });
     
     contours.clear();
-    return  MatToUIImage(imgThresholded);
+    if ([_delegate respondsToSelector:@selector(imageDidProcessed:)]) {
+        [_delegate imageDidProcessed:MatToUIImage(imgThresholded)];
+    }
 }
+   // return  MatToUIImage(imgThresholded);
 
+-(void) SetiLowH:(int) i{
+    iLowH = i;
+}
+-(void) SetiHighH:(int) i{
+    iHighH = i;
+}
+-(void) SetiLowS:(int) i{
+    iLowS = i;
+}
+-(void) SetiHighS:(int) i{
+    iHighS = i;
+}
+-(void) SetiLowV:(int) i{
+    iLowH = i;
+}
+-(void) SetiHighV:(int) i{
+    iLowV = i;
+}
 
 
 @end

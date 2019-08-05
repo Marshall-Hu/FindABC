@@ -14,7 +14,7 @@ class HSVModel: NSObject{
     public static let inputWidth = 30
     public static let inputHeight = 30
     
-    let model_hsv = number_50()
+    let model_hsv = number_100_newdata()
     
     @objc public func MyHSVModel(image:UIImage)
     {
