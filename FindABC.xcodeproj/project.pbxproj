@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00326FA522F6DE4500245BD1 /* number_100_newdata.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */; };
+		0061328722F83722000DF7EA /* number_100_224.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0061328622F83722000DF7EA /* number_100_224.mlmodel */; };
+		0061328C22F83C03000DF7EA /* WechatIMG708.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328922F83C02000DF7EA /* WechatIMG708.jpeg */; };
+		0061328D22F83C03000DF7EA /* WechatIMG704.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */; };
+		0061328E22F83C03000DF7EA /* WechatIMG706.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */; };
 		007EB72F22E3402000AE8F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007EB72E22E3402000AE8F5E /* AppDelegate.m */; };
 		007EB73522E3402000AE8F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007EB73322E3402000AE8F5E /* Main.storyboard */; };
 		007EB73722E3402200AE8F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007EB73622E3402200AE8F5E /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = number_100_newdata.mlmodel; sourceTree = "<group>"; };
+		0061328622F83722000DF7EA /* number_100_224.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = number_100_224.mlmodel; sourceTree = "<group>"; };
+		0061328922F83C02000DF7EA /* WechatIMG708.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG708.jpeg; sourceTree = "<group>"; };
+		0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG704.jpeg; sourceTree = "<group>"; };
+		0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG706.jpeg; sourceTree = "<group>"; };
 		007EB72A22E3402000AE8F5E /* FindABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007EB72D22E3402000AE8F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007EB72E22E3402000AE8F5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,10 +93,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0061328822F83BF2000DF7EA /* num2 */ = {
+			isa = PBXGroup;
+			children = (
+				0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */,
+				0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */,
+				0061328922F83C02000DF7EA /* WechatIMG708.jpeg */,
+			);
+			path = num2;
+			sourceTree = "<group>";
+		};
 		006E5B8722EDE78B005A16CC /* coreml */ = {
 			isa = PBXGroup;
 			children = (
 				00326FA422F6DE4500245BD1 /* number_100_newdata.mlmodel */,
+				0061328622F83722000DF7EA /* number_100_224.mlmodel */,
 				00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */,
 				00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */,
 				00D4578622F1C41400CD4373 /* FindABC-Bridging-Header.h */,
@@ -100,6 +119,7 @@
 		007EB72122E3402000AE8F5E = {
 			isa = PBXGroup;
 			children = (
+				0061328822F83BF2000DF7EA /* num2 */,
 				0091E38722F1D8A400768A5E /* test.jpg */,
 				00E3E0AA22F460A500333AC8 /* test_0 (8).jpg */,
 				00E3E0A922F460A400333AC8 /* test_1 (8).jpg */,
@@ -223,12 +243,15 @@
 			files = (
 				00E3E0B222F460A500333AC8 /* test_9 (2).jpg in Resources */,
 				00E3E0B922F460A500333AC8 /* test_6 (6).jpg in Resources */,
+				0061328E22F83C03000DF7EA /* WechatIMG706.jpeg in Resources */,
 				00E3E0B822F460A500333AC8 /* test_7 (7).jpg in Resources */,
 				007EB73A22E3402200AE8F5E /* LaunchScreen.storyboard in Resources */,
+				0061328C22F83C03000DF7EA /* WechatIMG708.jpeg in Resources */,
 				007EB73722E3402200AE8F5E /* Assets.xcassets in Resources */,
 				00E3E0B122F460A500333AC8 /* test_5 (4).jpg in Resources */,
 				00E3E0B622F460A500333AC8 /* test_3 (7).jpg in Resources */,
 				007EB73522E3402000AE8F5E /* Main.storyboard in Resources */,
+				0061328D22F83C03000DF7EA /* WechatIMG704.jpeg in Resources */,
 				00E3E0B522F460A500333AC8 /* test_4 (4).jpg in Resources */,
 				0091E38822F1D8A400768A5E /* test.jpg in Resources */,
 				00E3E0B722F460A500333AC8 /* test_8 (3).jpg in Resources */,
@@ -251,6 +274,7 @@
 				00326FA522F6DE4500245BD1 /* number_100_newdata.mlmodel in Sources */,
 				00D4578A22F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift in Sources */,
 				007EB73D22E3402200AE8F5E /* main.m in Sources */,
+				0061328722F83722000DF7EA /* number_100_224.mlmodel in Sources */,
 				007EB72F22E3402000AE8F5E /* AppDelegate.m in Sources */,
 				00D4578E22F1CA2100CD4373 /* OpenCVHSV.mm in Sources */,
 			);

@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *SliderV_low;
 @property (weak, nonatomic) IBOutlet UISlider *SliderV_high;
 
+@property (weak, nonatomic) IBOutlet UILabel *predictResult;
 
 
 @end
@@ -43,7 +44,7 @@
     [_SliderV_low addTarget:self action:@selector(sliderValueChanged_VL:) forControlEvents:UIControlEventValueChanged];
     [_SliderV_high addTarget:self action:@selector(sliderValueChanged_VH:) forControlEvents:UIControlEventValueChanged];
     
-    UIImage *test = [UIImage imageNamed:@"test_9 (2).jpg"];
+    UIImage *test = [UIImage imageNamed:@"WechatIMG708.jpeg"];
     NSLog(@"asdasdasdasd");
     HSVModel* tempModel =[ [HSVModel alloc] init];
     [tempModel MyHSVModelWithImage:test];
@@ -55,41 +56,49 @@
     [tempCV initHSV];
 
 }
+- (IBAction)predictHandly:(id)sender {
+    NSLog(@"predictHandly开始");
+    HSVModel* tempModel =[ [HSVModel alloc] init];
+//    NSLog(@"%ld", (long)[tempModel MyHSVModelWithImage:_rectImage1.image]);
+    _predictResult.text = [NSString stringWithFormat:@"%ld",(long)[tempModel MyHSVModelWithImage:_rectImage1.image]];
+    UIImageWriteToSavedPhotosAlbum(_rectImage1.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    NSLog(@"predictHandly结束");
+}
 
 -(void)sliderValueChanged_HL:(UISlider *)slider
 {
     [tempCV SetiLowH:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_HH:(UISlider *)slider
 {
     // iHighH =slider.value;
     [tempCV SetiHighH:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_SL:(UISlider *)slider
 {
     // iLowS = slider.value;
     [tempCV SetiLowS:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_SH:(UISlider *)slider
 {
     // iHighS = slider.value;
     [tempCV SetiHighS:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_VL:(UISlider *)slider
 {
     // iLowV = slider.value;
     [tempCV SetiLowV:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 -(void)sliderValueChanged_VH:(UISlider *)slider
 {
     // iHighV = slider.value;
     [tempCV SetiHighV:slider.value];
-    NSLog(@"slider value%f",slider.value);
+   // NSLog(@"slider value%f",slider.value);
 }
 
 - (void)imageDidProcessed:(UIImage*)image{
@@ -105,6 +114,15 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             self->_rectImage1.image = rectImage;
         });
+    }
+}
+#pragma mark -- <保存到相册>
+-(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSString *msg = nil ;
+    if(error){
+        msg = @"保存图片失败" ;
+    }else{
+        msg = @"保存图片成功" ;
     }
 }
 

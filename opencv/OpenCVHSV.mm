@@ -18,6 +18,9 @@ using namespace std;
 
 
 @interface OpenCVHSV()<CvVideoCameraDelegate>
+{
+    int outputSize;
+}
 @property (nonatomic,strong) CvVideoCamera* videoCamera;
 
 @end
@@ -37,6 +40,7 @@ vector<vector<cv::Point>> fakeContours;
 
 -(void) initHSV
 {
+    outputSize = 300;
     //Blue
      iLowH = 100;
      iHighH = 140;
@@ -99,8 +103,38 @@ vector<vector<cv::Point>> fakeContours;
             for (int i = 0; i < fakeContours.size(); i++) {
                 rect = boundingRect(MatGetAreaMaxContour(contours)[i]);
                 Mat ROI = imgThresholded(rect);
-                NSLog(@"得到的rectImage的尺寸是:%d,%d",ROI.cols,ROI.rows);
-                [RectImageArray addObject:MatToUIImage(ROI)];
+               // NSLog(@"1111111111111111:%d,%d",ROI.cols,ROI.rows);
+                Mat temp;
+                Mat zero = Mat::zeros(outputSize, outputSize, temp.type());
+
+                if ((float) ROI.cols / outputSize > (float) ROI.rows / outputSize) {
+                    resize(ROI, temp, cv::Size(outputSize, ROI.rows * outputSize / (float) ROI.cols));
+                    for (int i = 0; i < temp.rows; i++)
+                    {
+                        for (int j = 0; j < temp.cols; j++)
+                        {
+                            zero.at<uchar>(i+(outputSize/2 - temp.rows /2), j) = temp.at<uchar>(i, j);
+                        }
+                    }
+                }
+                else if ((float) ROI.cols / outputSize < (float) ROI.rows / outputSize)
+                {
+                    resize(ROI, temp, cv::Size(ROI.cols * outputSize / (float) ROI.rows,outputSize));
+                    for (int i = 0; i < temp.rows; i++)
+                    {
+                        for (int j = 0; j < temp.cols; j++)
+                        {
+                            zero.at<uchar>(i, j+(outputSize/2 - temp.cols /2)) = temp.at<uchar>(i, j);
+                        }
+                    }
+                }
+               // NSLog(@"222222222222222:%d,%d",temp.cols,temp.rows);
+                
+
+                
+                
+
+                [RectImageArray addObject:MatToUIImage(zero)];
             }
         }
         if ([_delegate respondsToSelector:@selector(rectImageDidProcessed:)]) {

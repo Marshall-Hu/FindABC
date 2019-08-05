@@ -11,12 +11,12 @@ import UIKit
 import CoreML
 
 class HSVModel: NSObject{
-    public static let inputWidth = 30
-    public static let inputHeight = 30
+    public static let inputWidth = 224
+    public static let inputHeight = 224
     
-    let model_hsv = number_100_newdata()
+    let model_hsv = number_100_224()
     
-    @objc public func MyHSVModel(image:UIImage)
+    @objc public func MyHSVModel(image:UIImage) -> NSInteger
     {
         print("MyHSVModel开始执行")
         let result = try? predict_v1(image: image.pixelBuffer(width: HSVModel.inputWidth, height: HSVModel.inputHeight)!)
@@ -31,13 +31,14 @@ class HSVModel: NSObject{
                     index = i
                 }
             }
-            print(index)
+            print("得到的数字是",index)
             
-            
+            return index
         }
         else
         {
             print("分析失败");
+            return -1
         }
     }
 
