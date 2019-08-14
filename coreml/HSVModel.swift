@@ -14,7 +14,7 @@ class HSVModel: NSObject{
     public static let inputWidth = 224
     public static let inputHeight = 224
     
-    let model_hsv = number_100_224()
+    let model_hsv = number_250_224()
     
     @objc public func MyHSVModel(image:UIImage) -> NSInteger
     {

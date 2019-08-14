@@ -63,6 +63,7 @@
     _predictResult.text = [NSString stringWithFormat:@"%ld",(long)[tempModel MyHSVModelWithImage:_rectImage1.image]];
     UIImageWriteToSavedPhotosAlbum(_rectImage1.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     NSLog(@"predictHandly结束");
+    [self printImageHSV];
 }
 
 -(void)sliderValueChanged_HL:(UISlider *)slider
@@ -124,6 +125,11 @@
     }else{
         msg = @"保存图片成功" ;
     }
+}
+
+#pragma mark -- <打印{颜色的阈值>
+-(void) printImageHSV{
+    NSLog(@"H:%f,%f \nS:%f,%f \nV:%f,%f",_SliderH_low.value,_SliderH_high.value,_SliderS_low.value,_SliderS_high.value,_SliderV_low.value,_SliderV_high.value);
 }
 
 @end
