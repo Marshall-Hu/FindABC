@@ -42,16 +42,13 @@ vector<vector<cv::Point>> fakeContours;
 {
     outputSize = 300;
     //Blue
-     iLowH = 100;
-     iHighH = 140;
+     iLowH = 0;
+     iHighH = 179;
     
-    //    int iLowH = 160;
-    //    int iHighH = 179;
-    
-     iLowS = 90;
+     iLowS = 0;
      iHighS = 255;
     
-     iLowV = 1;
+     iLowV = 0;
      iHighV = 255;
     self.videoCamera = [[CvVideoCamera alloc] init];
     self.videoCamera.delegate = self;
@@ -128,12 +125,6 @@ vector<vector<cv::Point>> fakeContours;
                         }
                     }
                 }
-               // NSLog(@"222222222222222:%d,%d",temp.cols,temp.rows);
-                
-
-                
-                
-
                 [RectImageArray addObject:MatToUIImage(zero)];
             }
         }
