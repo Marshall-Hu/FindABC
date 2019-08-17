@@ -240,7 +240,7 @@ vector<vector<cv::Point>> MatGetAreaMaxContour(vector<vector<cv::Point>> contour
     iLowH = i;
 }
 -(void) SetiHighV:(int) i{
-    iLowV = i;
+    iHighV = i;
 }
 
 

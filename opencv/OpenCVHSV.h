@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)imageDidProcessed:(UIImage*)image;
 - (void)rectImageDidProcessed:(NSArray*) rectImageArray;
 
+@optional
+- (void)rectImageDidProcessedRed:(NSArray*) rectImageArray;
+- (void)rectImageDidProcessedBlue:(NSArray*) rectImageArray;
+- (void)rectImageDidProcessedGreen:(NSArray*) rectImageArray;
+
 @end
 
 @interface OpenCVHSV : NSObject{
