@@ -41,15 +41,22 @@ vector<vector<cv::Point>> fakeContours;
 -(void) initHSV
 {
     outputSize = 300;
-    //Blue
-     iLowH = 0;
-     iHighH = 179;
-    
-     iLowS = 0;
+    //Blue 789
+     iLowH = 105;
+     iHighH = 130;
+     iLowS = 90;
      iHighS = 255;
-    
      iLowV = 0;
      iHighV = 255;
+    
+    //Red 0213
+    //iLowH = 170;
+    //iHighH = 179;
+    
+    //Green 456
+    //iLowH = 30;
+    //iHighH = 58;
+    
     self.videoCamera = [[CvVideoCamera alloc] init];
     self.videoCamera.delegate = self;
     self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionBack;
@@ -237,7 +244,7 @@ vector<vector<cv::Point>> MatGetAreaMaxContour(vector<vector<cv::Point>> contour
     iHighS = i;
 }
 -(void) SetiLowV:(int) i{
-    iLowH = i;
+    iLowV = i;
 }
 -(void) SetiHighV:(int) i{
     iHighV = i;
