@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001EAF10230AB9ED00A2634D /* HSV_Green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0D230AB9EB00A2634D /* HSV_Green.mlmodel */; };
+		001EAF11230AB9ED00A2634D /* HSV_Blue.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0E230AB9EC00A2634D /* HSV_Blue.mlmodel */; };
+		001EAF12230AB9ED00A2634D /* HSV_Red.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0F230AB9ED00A2634D /* HSV_Red.mlmodel */; };
 		0061328C22F83C03000DF7EA /* WechatIMG708.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328922F83C02000DF7EA /* WechatIMG708.jpeg */; };
 		0061328D22F83C03000DF7EA /* WechatIMG704.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */; };
 		0061328E22F83C03000DF7EA /* WechatIMG706.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001EAF0D230AB9EB00A2634D /* HSV_Green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Green.mlmodel; sourceTree = "<group>"; };
+		001EAF0E230AB9EC00A2634D /* HSV_Blue.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Blue.mlmodel; sourceTree = "<group>"; };
+		001EAF0F230AB9ED00A2634D /* HSV_Red.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Red.mlmodel; sourceTree = "<group>"; };
 		0061328922F83C02000DF7EA /* WechatIMG708.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG708.jpeg; sourceTree = "<group>"; };
 		0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG704.jpeg; sourceTree = "<group>"; };
 		0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG706.jpeg; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				00789F322303D81700D18172 /* number_250_224.mlmodel */,
+				001EAF0E230AB9EC00A2634D /* HSV_Blue.mlmodel */,
+				001EAF0D230AB9EB00A2634D /* HSV_Green.mlmodel */,
+				001EAF0F230AB9ED00A2634D /* HSV_Red.mlmodel */,
 				00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */,
 				00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */,
 				00D4578622F1C41400CD4373 /* FindABC-Bridging-Header.h */,
@@ -265,9 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001EAF11230AB9ED00A2634D /* HSV_Blue.mlmodel in Sources */,
 				00F01B2122F1E65D002C4780 /* ViewController.m in Sources */,
 				00D4578822F1C41500CD4373 /* UIImage+CVPixelBuffer.swift in Sources */,
 				0091E38622F1CFEB00768A5E /* HSVModel.swift in Sources */,
+				001EAF12230AB9ED00A2634D /* HSV_Red.mlmodel in Sources */,
+				001EAF10230AB9ED00A2634D /* HSV_Green.mlmodel in Sources */,
 				00D4578A22F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift in Sources */,
 				00789F332303D81700D18172 /* number_250_224.mlmodel in Sources */,
 				007EB73D22E3402200AE8F5E /* main.m in Sources */,

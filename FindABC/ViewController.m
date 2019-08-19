@@ -12,6 +12,8 @@
 @interface ViewController () <MyCreatHSVImageDelegate>
 {
     OpenCVHSV *tempCV;
+    
+    HSVModel* myHSVModel;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *testView;
 @property (strong, nonatomic) UIImageView *videoCameraView;
@@ -62,6 +64,8 @@
     tempCV.delegate = self;
     [tempCV isThisWorking];
     [tempCV initHSV];
+    
+    myHSVModel = [[HSVModel alloc] init];
 
 }
 - (IBAction)predictHandly:(id)sender {
@@ -71,7 +75,7 @@
     _predictResult.text = [NSString stringWithFormat:@"%ld",(long)[tempModel MyHSVModelWithImage:_rectImage_Red.image]];
     UIImageWriteToSavedPhotosAlbum(_rectImage_Red.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     NSLog(@"predictHandly结束");
-    [self printImageHSV];
+    //[self printImageHSV];
 }
 
 -(void)sliderValueChanged_HL:(UISlider *)slider
@@ -136,6 +140,34 @@
         });
     }
 }
+
+-(void)rectImageDidProcessedBlue:(NSArray *)rectImageArray{
+    //NSLog(@"blue %i",(int)rectImageArray.count);
+    
+    if (rectImageArray.count == 1) {
+        UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
+        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_BlueWithImage:rectImage]];
+
+    }
+}
+
+-(void)rectImageDidProcessedRed:(NSArray *)rectImageArray{
+        //NSLog(@"red %i",(int)rectImageArray.count);
+    if (rectImageArray.count == 1) {
+        UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
+        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_RedWithImage:rectImage]];
+    }
+}
+
+-(void)rectImageDidProcessedGreen:(NSArray *)rectImageArray{
+        //NSLog(@"gerrn %i",(int)rectImageArray.count);
+    if (rectImageArray.count == 1) {
+        UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
+        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_GreenWithImage:rectImage]];
+    }
+}
+
+
 #pragma mark -- <保存到相册>
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSString *msg = nil ;

@@ -24,11 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)imageDidProcessed:(UIImage*)image;
 - (void)rectImageDidProcessed:(NSArray*) rectImageArray;
-
-@optional
 - (void)rectImageDidProcessedRed:(NSArray*) rectImageArray;
 - (void)rectImageDidProcessedBlue:(NSArray*) rectImageArray;
 - (void)rectImageDidProcessedGreen:(NSArray*) rectImageArray;
+
+//@optional
+//- (void)rectImageDidProcessedRed:(NSArray*) rectImageArray;
+//- (void)rectImageDidProcessedBlue:(NSArray*) rectImageArray;
+//- (void)rectImageDidProcessedGreen:(NSArray*) rectImageArray;
 
 @end
 
@@ -42,6 +45,14 @@ NS_ASSUME_NONNULL_BEGIN
     
     int iLowV;
     int iHighV;
+    
+    //Red 0213
+    int iLowH_red;
+    int iHighH_red;
+    
+    //Green 456
+    int iLowH_green;
+    int iHighH_green;
 }
 
 @property (strong,nonatomic) UIImage* resultImage;
