@@ -10,9 +10,6 @@
 		001EAF10230AB9ED00A2634D /* HSV_Green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0D230AB9EB00A2634D /* HSV_Green.mlmodel */; };
 		001EAF11230AB9ED00A2634D /* HSV_Blue.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0E230AB9EC00A2634D /* HSV_Blue.mlmodel */; };
 		001EAF12230AB9ED00A2634D /* HSV_Red.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 001EAF0F230AB9ED00A2634D /* HSV_Red.mlmodel */; };
-		0061328C22F83C03000DF7EA /* WechatIMG708.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328922F83C02000DF7EA /* WechatIMG708.jpeg */; };
-		0061328D22F83C03000DF7EA /* WechatIMG704.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */; };
-		0061328E22F83C03000DF7EA /* WechatIMG706.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */; };
 		00789F332303D81700D18172 /* number_250_224.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00789F322303D81700D18172 /* number_250_224.mlmodel */; };
 		007EB72F22E3402000AE8F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007EB72E22E3402000AE8F5E /* AppDelegate.m */; };
 		007EB73522E3402000AE8F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007EB73322E3402000AE8F5E /* Main.storyboard */; };
@@ -24,20 +21,9 @@
 		007EB74A22E35F8400AE8F5E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007EB74922E35F8400AE8F5E /* CoreMedia.framework */; };
 		007EB74C22E362ED00AE8F5E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007EB74B22E362ED00AE8F5E /* CoreVideo.framework */; };
 		0091E38622F1CFEB00768A5E /* HSVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091E38522F1CFEB00768A5E /* HSVModel.swift */; };
-		0091E38822F1D8A400768A5E /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0091E38722F1D8A400768A5E /* test.jpg */; };
 		00D4578822F1C41500CD4373 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */; };
 		00D4578A22F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */; };
 		00D4578E22F1CA2100CD4373 /* OpenCVHSV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00D4578D22F1CA2100CD4373 /* OpenCVHSV.mm */; };
-		00E3E0B022F460A500333AC8 /* test_2 (8).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0A622F460A400333AC8 /* test_2 (8).jpg */; };
-		00E3E0B122F460A500333AC8 /* test_5 (4).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0A722F460A400333AC8 /* test_5 (4).jpg */; };
-		00E3E0B222F460A500333AC8 /* test_9 (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0A822F460A400333AC8 /* test_9 (2).jpg */; };
-		00E3E0B322F460A500333AC8 /* test_1 (8).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0A922F460A400333AC8 /* test_1 (8).jpg */; };
-		00E3E0B422F460A500333AC8 /* test_0 (8).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AA22F460A500333AC8 /* test_0 (8).jpg */; };
-		00E3E0B522F460A500333AC8 /* test_4 (4).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AB22F460A500333AC8 /* test_4 (4).jpg */; };
-		00E3E0B622F460A500333AC8 /* test_3 (7).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AC22F460A500333AC8 /* test_3 (7).jpg */; };
-		00E3E0B722F460A500333AC8 /* test_8 (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AD22F460A500333AC8 /* test_8 (3).jpg */; };
-		00E3E0B822F460A500333AC8 /* test_7 (7).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AE22F460A500333AC8 /* test_7 (7).jpg */; };
-		00E3E0B922F460A500333AC8 /* test_6 (6).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E3E0AF22F460A500333AC8 /* test_6 (6).jpg */; };
 		00F01B2122F1E65D002C4780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F01B2022F1E65D002C4780 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +31,6 @@
 		001EAF0D230AB9EB00A2634D /* HSV_Green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Green.mlmodel; sourceTree = "<group>"; };
 		001EAF0E230AB9EC00A2634D /* HSV_Blue.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Blue.mlmodel; sourceTree = "<group>"; };
 		001EAF0F230AB9ED00A2634D /* HSV_Red.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HSV_Red.mlmodel; sourceTree = "<group>"; };
-		0061328922F83C02000DF7EA /* WechatIMG708.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG708.jpeg; sourceTree = "<group>"; };
-		0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG704.jpeg; sourceTree = "<group>"; };
-		0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG706.jpeg; sourceTree = "<group>"; };
 		00789F322303D81700D18172 /* number_250_224.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = number_250_224.mlmodel; sourceTree = "<group>"; };
 		007EB72A22E3402000AE8F5E /* FindABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007EB72D22E3402000AE8F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,22 +46,11 @@
 		007EB74922E35F8400AE8F5E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		007EB74B22E362ED00AE8F5E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		0091E38522F1CFEB00768A5E /* HSVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSVModel.swift; sourceTree = "<group>"; };
-		0091E38722F1D8A400768A5E /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		00D4578622F1C41400CD4373 /* FindABC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindABC-Bridging-Header.h"; sourceTree = "<group>"; };
 		00D4578722F1C41500CD4373 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		00D4578922F1C43B00CD4373 /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		00D4578C22F1CA2100CD4373 /* OpenCVHSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVHSV.h; sourceTree = "<group>"; };
 		00D4578D22F1CA2100CD4373 /* OpenCVHSV.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVHSV.mm; sourceTree = "<group>"; };
-		00E3E0A622F460A400333AC8 /* test_2 (8).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_2 (8).jpg"; sourceTree = "<group>"; };
-		00E3E0A722F460A400333AC8 /* test_5 (4).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_5 (4).jpg"; sourceTree = "<group>"; };
-		00E3E0A822F460A400333AC8 /* test_9 (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_9 (2).jpg"; sourceTree = "<group>"; };
-		00E3E0A922F460A400333AC8 /* test_1 (8).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_1 (8).jpg"; sourceTree = "<group>"; };
-		00E3E0AA22F460A500333AC8 /* test_0 (8).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_0 (8).jpg"; sourceTree = "<group>"; };
-		00E3E0AB22F460A500333AC8 /* test_4 (4).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_4 (4).jpg"; sourceTree = "<group>"; };
-		00E3E0AC22F460A500333AC8 /* test_3 (7).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_3 (7).jpg"; sourceTree = "<group>"; };
-		00E3E0AD22F460A500333AC8 /* test_8 (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_8 (3).jpg"; sourceTree = "<group>"; };
-		00E3E0AE22F460A500333AC8 /* test_7 (7).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_7 (7).jpg"; sourceTree = "<group>"; };
-		00E3E0AF22F460A500333AC8 /* test_6 (6).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test_6 (6).jpg"; sourceTree = "<group>"; };
 		00F01B2022F1E65D002C4780 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,16 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0061328822F83BF2000DF7EA /* num2 */ = {
-			isa = PBXGroup;
-			children = (
-				0061328A22F83C03000DF7EA /* WechatIMG704.jpeg */,
-				0061328B22F83C03000DF7EA /* WechatIMG706.jpeg */,
-				0061328922F83C02000DF7EA /* WechatIMG708.jpeg */,
-			);
-			path = num2;
-			sourceTree = "<group>";
-		};
 		006E5B8722EDE78B005A16CC /* coreml */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,18 +87,6 @@
 		007EB72122E3402000AE8F5E = {
 			isa = PBXGroup;
 			children = (
-				0061328822F83BF2000DF7EA /* num2 */,
-				0091E38722F1D8A400768A5E /* test.jpg */,
-				00E3E0AA22F460A500333AC8 /* test_0 (8).jpg */,
-				00E3E0A922F460A400333AC8 /* test_1 (8).jpg */,
-				00E3E0A622F460A400333AC8 /* test_2 (8).jpg */,
-				00E3E0AC22F460A500333AC8 /* test_3 (7).jpg */,
-				00E3E0AB22F460A500333AC8 /* test_4 (4).jpg */,
-				00E3E0A722F460A400333AC8 /* test_5 (4).jpg */,
-				00E3E0AF22F460A500333AC8 /* test_6 (6).jpg */,
-				00E3E0AE22F460A500333AC8 /* test_7 (7).jpg */,
-				00E3E0AD22F460A500333AC8 /* test_8 (3).jpg */,
-				00E3E0A822F460A400333AC8 /* test_9 (2).jpg */,
 				00D4578B22F1C9D800CD4373 /* opencv */,
 				006E5B8722EDE78B005A16CC /* coreml */,
 				007EB72C22E3402000AE8F5E /* FindABC */,
@@ -247,23 +197,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E3E0B222F460A500333AC8 /* test_9 (2).jpg in Resources */,
-				00E3E0B922F460A500333AC8 /* test_6 (6).jpg in Resources */,
-				0061328E22F83C03000DF7EA /* WechatIMG706.jpeg in Resources */,
-				00E3E0B822F460A500333AC8 /* test_7 (7).jpg in Resources */,
 				007EB73A22E3402200AE8F5E /* LaunchScreen.storyboard in Resources */,
-				0061328C22F83C03000DF7EA /* WechatIMG708.jpeg in Resources */,
 				007EB73722E3402200AE8F5E /* Assets.xcassets in Resources */,
-				00E3E0B122F460A500333AC8 /* test_5 (4).jpg in Resources */,
-				00E3E0B622F460A500333AC8 /* test_3 (7).jpg in Resources */,
 				007EB73522E3402000AE8F5E /* Main.storyboard in Resources */,
-				0061328D22F83C03000DF7EA /* WechatIMG704.jpeg in Resources */,
-				00E3E0B522F460A500333AC8 /* test_4 (4).jpg in Resources */,
-				0091E38822F1D8A400768A5E /* test.jpg in Resources */,
-				00E3E0B722F460A500333AC8 /* test_8 (3).jpg in Resources */,
-				00E3E0B422F460A500333AC8 /* test_0 (8).jpg in Resources */,
-				00E3E0B322F460A500333AC8 /* test_1 (8).jpg in Resources */,
-				00E3E0B022F460A500333AC8 /* test_2 (8).jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

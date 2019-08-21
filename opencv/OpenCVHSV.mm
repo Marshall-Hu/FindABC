@@ -31,6 +31,8 @@ vector<Vec4i> hierarchy;
 
 vector<vector<cv::Point>> fakeContours;
 
+cv::Rect imageRectCut(0,480,1080,960);
+
 Mat temp_element_1;
 Mat temp_imgThresholded;
 Mat imgThresholded_Mix;
@@ -49,26 +51,27 @@ Mat imgThresholded_green;
 -(void) initHSV
 {
     outputSize = 300;
-    iLowS = 40;
+    
+    iLowS = 35;//这个值需要动态调整 与白色灯光的混合程度，在亮处尤其明显
     iHighS = 255;
     iLowV = 1;
     iHighV = 255;
     //Blue 789
-    iLowH = 115;
+    iLowH = 103;
     iHighH = 130;
     
     temp_element_1 = getStructuringElement(MORPH_RECT, cv::Size(30, 30));
     //Red 0213
-    iLowH_red = 170;
+    iLowH_red = 158;
     iHighH_red = 179;
     
     //Green 456
     iLowH_green = 30;
-    iHighH_green = 58;
+    iHighH_green = 60;
     
     self.videoCamera = [[CvVideoCamera alloc] init];
     self.videoCamera.delegate = self;
-    self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionBack;
+    self.videoCamera.defaultAVCaptureDevicePosition =AVCaptureDevicePositionFront;
     self.videoCamera.defaultAVCaptureSessionPreset =AVCaptureSessionPresetHigh;
     self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
     self.videoCamera.defaultFPS = 5;
@@ -82,9 +85,13 @@ Mat imgThresholded_green;
 {
     // 将图像转换为灰度显示
     //cvtColor(image, image, COLOR_RGBA2RGB);
+    
+    //cout<<"摄像头的参数是:"<<image.cols<<" "<<image.rows<<endl;
+    Mat ROIImage = image(imageRectCut);
+    //cout<<"摄像头的参数是:"<<ROIImage.cols<<" "<<ROIImage.rows<<endl;
     Mat imgHSV;
     vector<Mat> hsvSplit;
-    cvtColor(image, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+    cvtColor(ROIImage, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
     
     //因为我们读取的是彩色图，直方图均衡化需要在HSV空间做
     split(imgHSV, hsvSplit);
@@ -199,6 +206,8 @@ Mat imgThresholded_green;
             }
         }
         [_delegate rectImageDidProcessedRed:RectImageArray];
+        //[_delegate rectImageDidProcessed:RectImageArray];
+
     }
     if(!contours.empty())
         contours.clear();//记录面积的作用
@@ -292,7 +301,7 @@ vector<vector<cv::Point>> MatGetQualifiedAreaContour(vector<vector<cv::Point>> c
         
         //NSLog(@"d面积是:%f",contour_area_temp);
         
-        if( contour_area_temp > 3000)
+        if( contour_area_temp > 500)
         {
             area_qualified_contour.push_back(contour[i]);//记录面积最大的轮廓
         }

@@ -15,9 +15,9 @@ class HSVModel: NSObject{
     public static let inputHeight = 224
     
     let model_hsv = number_250_224()
-    let modelHSV_Red = HSV_Red();
-    let modelHSV_Blue = HSV_Blue();
-    let modelHSV_Green = HSV_Green();
+    let modelHSV_Red = HSV_Red()
+    let modelHSV_Blue = HSV_Blue()
+    let modelHSV_Green = HSV_Green()
     
     @objc public func MyHSVModel(image:UIImage) -> NSInteger
     {
