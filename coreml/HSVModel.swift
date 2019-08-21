@@ -88,7 +88,7 @@ class HSVModel: NSObject{
             }
             print("得到的数字是",index+7)
             
-            return index
+            return index + 7
         }
         else
         {
@@ -114,7 +114,7 @@ class HSVModel: NSObject{
             }
             print("得到的数字是",index+4)
             
-            return index
+            return index + 4
         }
         else
         {

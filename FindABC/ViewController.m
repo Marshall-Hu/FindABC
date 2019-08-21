@@ -38,6 +38,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *LabelV_low;
 @property (weak, nonatomic) IBOutlet UILabel *LabelV_high;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *labelRed;
+@property (weak, nonatomic) IBOutlet UILabel *labelgreen;
+@property (weak, nonatomic) IBOutlet UILabel *labelblue;
+
 @end
 
 @implementation ViewController
@@ -146,8 +151,9 @@
     
     if (rectImageArray.count == 1) {
         UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
-        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_BlueWithImage:rectImage]];
 
+        dispatch_async(dispatch_get_main_queue(), ^{
+        _labelblue.text =         [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_BlueWithImage:rectImage]];        });
     }
 }
 
@@ -155,7 +161,9 @@
         //NSLog(@"red %i",(int)rectImageArray.count);
     if (rectImageArray.count == 1) {
         UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
-        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_RedWithImage:rectImage]];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+        _labelRed.text = [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_RedWithImage:rectImage]];        });
     }
 }
 
@@ -163,7 +171,9 @@
         //NSLog(@"gerrn %i",(int)rectImageArray.count);
     if (rectImageArray.count == 1) {
         UIImage* rectImage =(UIImage*) [rectImageArray objectAtIndex:0];
-        [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_GreenWithImage:rectImage]];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+        _labelgreen.text = [NSString stringWithFormat:@"%ld",(long)[myHSVModel MyHSVModel_GreenWithImage:rectImage]];        });
     }
 }
 
